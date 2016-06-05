@@ -25,25 +25,42 @@ namespace WindowsFormsApplication1
 
         private void FormVernam_FormClosed(object sender, FormClosedEventArgs e)
         {
+            File.Delete(@"vernamKey.txt");
             new Form1().Show();
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            File.Delete(@"vernamKey.txt");
             this.Close();
         }
 
         private void buttonEncrypt_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string key = File.ReadAllText(@"vernamKey.txt"); //Зчитування ключа
+                if (InputDataTextBox.Text == "")
+                {
+                    MessageBox.Show("Введіть дані для дешифрування!");
+                    return;
+                }
+                if (key.Length != InputDataTextBox.Text.Length)
+                {
+                    MessageBox.Show("Розмір ключа не співпадає з розміром тексту!");
+                    return;
+                }
+                OutputDataTextBox.Text = Vernam.Encrypt(InputDataTextBox.Text, key);
+            }
+            catch (Exception err) // Якщо файлу не існує
+            {
+                new FormVernamKey().ShowDialog();
+            }
             if (InputDataTextBox.Text == "")
             {
                 MessageBox.Show("Введіть дані для шифрування!");
                 return;
             }
-            string key = Vernam.genKey(InputDataTextBox.Text.Length);
-            string crp = Vernam.Encrypt(InputDataTextBox.Text, key);
-            OutputDataTextBox.Text = crp;
-            System.IO.File.WriteAllText(@"vernamKey.txt", key);
-
+            
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e) 
@@ -69,9 +86,10 @@ namespace WindowsFormsApplication1
             }
             catch (Exception err) // Якщо файлу не існує
             {
-                MessageBox.Show("Файлу не існує!");
+                new FormVernamKey().ShowDialog();
+
             }
-            
+
         }
 
         private void buttonKey_Click(object sender, EventArgs e)

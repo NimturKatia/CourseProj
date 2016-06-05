@@ -37,6 +37,8 @@
             this.buttonKey = new System.Windows.Forms.Button();
             this.buttonVernamSaveKey = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // InputDataTextBox
@@ -59,7 +61,7 @@
             // 
             // buttonEncrypt
             // 
-            this.buttonEncrypt.Location = new System.Drawing.Point(278, 94);
+            this.buttonEncrypt.Location = new System.Drawing.Point(278, 166);
             this.buttonEncrypt.Name = "buttonEncrypt";
             this.buttonEncrypt.Size = new System.Drawing.Size(155, 23);
             this.buttonEncrypt.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(278, 224);
+            this.buttonSave.Location = new System.Drawing.Point(278, 253);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(155, 23);
             this.buttonSave.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // buttonDecrypt
             // 
-            this.buttonDecrypt.Location = new System.Drawing.Point(278, 178);
+            this.buttonDecrypt.Location = new System.Drawing.Point(278, 195);
             this.buttonDecrypt.Name = "buttonDecrypt";
             this.buttonDecrypt.Size = new System.Drawing.Size(155, 23);
             this.buttonDecrypt.TabIndex = 4;
@@ -99,7 +101,7 @@
             // 
             // buttonKey
             // 
-            this.buttonKey.Location = new System.Drawing.Point(278, 134);
+            this.buttonKey.Location = new System.Drawing.Point(278, 137);
             this.buttonKey.Name = "buttonKey";
             this.buttonKey.Size = new System.Drawing.Size(155, 23);
             this.buttonKey.TabIndex = 6;
@@ -109,7 +111,7 @@
             // 
             // buttonVernamSaveKey
             // 
-            this.buttonVernamSaveKey.Location = new System.Drawing.Point(278, 267);
+            this.buttonVernamSaveKey.Location = new System.Drawing.Point(278, 224);
             this.buttonVernamSaveKey.Name = "buttonVernamSaveKey";
             this.buttonVernamSaveKey.Size = new System.Drawing.Size(155, 23);
             this.buttonVernamSaveKey.TabIndex = 7;
@@ -117,11 +119,31 @@
             this.buttonVernamSaveKey.UseVisualStyleBackColor = true;
             this.buttonVernamSaveKey.Click += new System.EventHandler(this.buttonVernamSaveKey_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Вхідні дані:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(446, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Результат:";
+            // 
             // FormVernam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 495);
+            this.ClientSize = new System.Drawing.Size(712, 495);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonVernamSaveKey);
             this.Controls.Add(this.buttonKey);
             this.Controls.Add(this.buttonBack);
@@ -152,5 +174,7 @@
         private System.Windows.Forms.Button buttonKey;
         private System.Windows.Forms.Button buttonVernamSaveKey;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -19,17 +20,25 @@ namespace WindowsFormsApplication1
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            if ((checkBox1.Checked)&(textBoxNumberKey.Text != ""))
             {
+                string key = Vernam.genKey(Convert.ToInt32(textBoxNumberKey.Text));
+                System.IO.File.WriteAllText(@"vernamKey.txt", key);
                 this.Close();
                 return;
+            } else
+            {
+                if ((checkBox1.Checked) & (textBoxNumberKey.Text == ""))
+                {
+                    MessageBox.Show("Введіть кількість символів для ключа!");
+                }
             }
-            if (textBoxVernamKeyField.Text == "")
+            if (richTextBoxVernamKey.Text == "")
             {
                 MessageBox.Show("Введіть ключ!");
             } else
             {
-                System.IO.File.WriteAllText(@"vernamKey.txt", textBoxVernamKeyField.Text);
+                System.IO.File.WriteAllText(@"vernamKey.txt", richTextBoxVernamKey.Text);
                 this.Close();
             }
         }
@@ -42,10 +51,43 @@ namespace WindowsFormsApplication1
         private void buttonVernamKeyLoadFromFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Текстовий документ (*.txt)|*.txt|Всі файли (*.*)|*.*";
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog1.FileName != string.Empty)
+            openFileDialog.Filter = "txt files|*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                textBoxVernamKeyField.Text = File.ReadAllText(openFileDialog.FileName); ;
+                richTextBoxVernamKey.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.PlainText);
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                textBoxNumberKey.ReadOnly = true;
+            } else
+            {
+                textBoxNumberKey.ReadOnly = false;
+            }
+        }
+
+        private void FormVernamKey_Load(object sender, EventArgs e)
+        {
+            if (System.IO.File.Exists(@"vernamKey.txt"))
+            {
+                richTextBoxVernamKey.Text = System.IO.File.ReadAllText(@"vernamKey.txt");
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовий документ (*.txt)|*.txt|Всі файли (*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
+                streamWriter.WriteLine(richTextBoxVernamKey.Text);
+                streamWriter.Close();
             }
         }
     }
