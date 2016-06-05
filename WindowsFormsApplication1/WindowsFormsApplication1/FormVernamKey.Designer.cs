@@ -32,6 +32,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
+            this.buttonVernamKeyLoadFromFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // textBoxVernamKeyField
@@ -74,11 +76,26 @@
             this.buttonAccept.UseVisualStyleBackColor = true;
             this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
+            // buttonVernamKeyLoadFromFile
+            // 
+            this.buttonVernamKeyLoadFromFile.Location = new System.Drawing.Point(12, 180);
+            this.buttonVernamKeyLoadFromFile.Name = "buttonVernamKeyLoadFromFile";
+            this.buttonVernamKeyLoadFromFile.Size = new System.Drawing.Size(131, 23);
+            this.buttonVernamKeyLoadFromFile.TabIndex = 4;
+            this.buttonVernamKeyLoadFromFile.Text = "Завантажити з файлу";
+            this.buttonVernamKeyLoadFromFile.UseVisualStyleBackColor = true;
+            this.buttonVernamKeyLoadFromFile.Click += new System.EventHandler(this.buttonVernamKeyLoadFromFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormVernamKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 281);
+            this.Controls.Add(this.buttonVernamKeyLoadFromFile);
             this.Controls.Add(this.buttonAccept);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.checkBox1);
@@ -97,5 +114,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAccept;
+        private System.Windows.Forms.Button buttonVernamKeyLoadFromFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

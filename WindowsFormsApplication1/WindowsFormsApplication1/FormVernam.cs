@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {
@@ -40,7 +41,7 @@ namespace WindowsFormsApplication1
             }
             string key = Vernam.genKey(InputDataTextBox.Text.Length);
             string crp = Vernam.Encrypt(InputDataTextBox.Text, key);
-            OutpuDataTextBox.Text = crp;
+            OutputDataTextBox.Text = crp;
             System.IO.File.WriteAllText(@"vernamKey.txt", key);
 
         }
@@ -54,7 +55,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string key = System.IO.File.ReadAllText(@"vernamKey.txt"); //Зчитування ключа
+                string key = File.ReadAllText(@"vernamKey.txt"); //Зчитування ключа
                 if (InputDataTextBox.Text == "")
                 {
                     MessageBox.Show("Введіть дані для дешифрування!");
@@ -64,7 +65,7 @@ namespace WindowsFormsApplication1
                 {
                     MessageBox.Show("Розмір ключа не співпадає з розміром тексту!");
                 }
-                OutpuDataTextBox.Text = Vernam.Encrypt(InputDataTextBox.Text, key);
+                OutputDataTextBox.Text = Vernam.Encrypt(InputDataTextBox.Text, key);
             }
             catch (Exception err) // Якщо файлу не існує
             {
@@ -76,6 +77,33 @@ namespace WindowsFormsApplication1
         private void buttonKey_Click(object sender, EventArgs e)
         {
             new FormVernamKey().ShowDialog();   
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовий документ (*.txt)|*.txt|Всі файли (*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
+                streamWriter.WriteLine(OutputDataTextBox.Text);
+                streamWriter.Close();
+            }
+        }
+
+        private void buttonVernamSaveKey_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Текстовий документ (*.txt)|*.txt|Всі файли (*.*)|*.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
+                string key = File.ReadAllText(@"vernamKey.txt");
+                streamWriter.WriteLine(key);
+                streamWriter.Close();
+            }
         }
     }
 }

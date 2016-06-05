@@ -30,12 +30,23 @@ namespace WindowsFormsApplication1
             } else
             {
                 System.IO.File.WriteAllText(@"vernamKey.txt", textBoxVernamKeyField.Text);
+                this.Close();
             }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonVernamKeyLoadFromFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Текстовий документ (*.txt)|*.txt|Всі файли (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog1.FileName != string.Empty)
+            {
+                textBoxVernamKeyField.Text = File.ReadAllText(openFileDialog.FileName); ;
+            }
         }
     }
 }
