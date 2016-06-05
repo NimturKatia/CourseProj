@@ -12,7 +12,6 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
-        string Key;
         public Form1()
         {
             InitializeComponent();
