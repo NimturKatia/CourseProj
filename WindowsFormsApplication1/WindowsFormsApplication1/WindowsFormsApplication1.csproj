@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaesarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CaesarForm.Designer.cs">
-      <DependentUpon>CaesarForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +87,6 @@
     <Compile Include="Vigenere.Designer.cs">
       <DependentUpon>Vigenere.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CaesarForm.resx">
-      <DependentUpon>CaesarForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

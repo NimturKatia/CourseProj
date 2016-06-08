@@ -20,18 +20,13 @@ namespace WindowsFormsApplication1
 
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            if ((checkBox1.Checked)&(textBoxNumberKey.Text != ""))
+            if ((checkBox1.Checked))
             {
-                string key = Vernam.genKey(Convert.ToInt32(textBoxNumberKey.Text));
+                int num = Convert.ToInt32(File.ReadAllText(@"vernamnum"));
+                string key = Vernam.genKey(num);
                 System.IO.File.WriteAllText(@"vernamKey.txt", key);
                 this.Close();
                 return;
-            } else
-            {
-                if ((checkBox1.Checked) & (textBoxNumberKey.Text == ""))
-                {
-                    MessageBox.Show("Введіть кількість символів для ключа!");
-                }
             }
             if (richTextBoxVernamKey.Text == "")
             {
@@ -61,13 +56,7 @@ namespace WindowsFormsApplication1
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == false)
-            {
-                textBoxNumberKey.ReadOnly = true;
-            } else
-            {
-                textBoxNumberKey.ReadOnly = false;
-            }
+
         }
 
         private void FormVernamKey_Load(object sender, EventArgs e)

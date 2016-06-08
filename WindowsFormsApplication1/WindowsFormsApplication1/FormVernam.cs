@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             }
             catch (Exception err) // Якщо файлу не існує
             {
-                new FormVernamKey().ShowDialog();
+                MessageBox.Show("Введіть ключ!");
             }
             if (InputDataTextBox.Text == "")
             {
@@ -94,6 +94,7 @@ namespace WindowsFormsApplication1
 
         private void buttonKey_Click(object sender, EventArgs e)
         {
+            File.WriteAllText(@"vernamnum", Convert.ToString(InputDataTextBox.Text.Length));
             new FormVernamKey().ShowDialog();   
         }
 

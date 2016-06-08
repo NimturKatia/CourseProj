@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
         int phi, e, d, n;
         Random rand = new Random();
 
-        private bool isPrime(int n)//check for prime num
+        public static bool isPrime(int n)//check for prime num
         {
 
             if (n == 2)
@@ -61,7 +61,6 @@ namespace WindowsFormsApplication1
             return 1;
         }
 
-
         public List<int> generatePairs(int p, int q)
         {
             if (!isPrime(p) && !isPrime(q))
@@ -81,9 +80,9 @@ namespace WindowsFormsApplication1
             }
 
             d = multiplicateInverse(e, phi);
-            pairs.Add(n);                        // PAIRS[0] - N
-            pairs.Add(e);                        // PAIRS[1] - e
-            pairs.Add(d);                        // PAIRS[2] - d
+            pairs.Add(n);                        
+            pairs.Add(e);                        
+            pairs.Add(d);                        
 
             return pairs;
         }
@@ -94,8 +93,6 @@ namespace WindowsFormsApplication1
             int[] crypted = new int[textArr.Length];
             for (int i = 0; i < textArr.Length; i++)
             {
-                //textArr[i] = (byte)(Powr(textArr[i], pairs[1]) % (ulong)pairs[0]);
-                //textArr[i] = (byte)BigInteger.ModPow(textArr[i], pairs[1], pairs[0]);
                 crypted[i] = (int)BigInteger.ModPow(textArr[i], pairs[1], pairs[0]);
             }
 
@@ -108,8 +105,6 @@ namespace WindowsFormsApplication1
             int[] iArr = new int[arr.Length];
             for (int i = 0; i < arr.Length; i++)
             {
-                //_cmsg = BigInteger.ModPow(arr[i], d, n);
-                //arr[i] = (byte)(Powr(arr[i], d) % (ulong)n);
                 iArr[i] = (int)BigInteger.ModPow(arr[i], pairs[2], pairs[0]);
                 bArr[i] = (byte)iArr[i];
             }

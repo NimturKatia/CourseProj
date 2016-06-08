@@ -94,5 +94,10 @@ namespace WindowsFormsApplication1
             string input = richTextBox1.Text.ToLower();
             richTextBox2.Text = Decrypt(abc, input, key);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

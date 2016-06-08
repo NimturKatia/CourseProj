@@ -35,7 +35,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.richTextBoxVernamKey = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNumberKey = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
@@ -104,13 +103,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Введіть кількість символів:";
             // 
-            // textBoxNumberKey
-            // 
-            this.textBoxNumberKey.Location = new System.Drawing.Point(12, 218);
-            this.textBoxNumberKey.Name = "textBoxNumberKey";
-            this.textBoxNumberKey.Size = new System.Drawing.Size(100, 22);
-            this.textBoxNumberKey.TabIndex = 7;
-            // 
             // buttonSave
             // 
             this.buttonSave.Location = new System.Drawing.Point(164, 145);
@@ -127,7 +119,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 281);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textBoxNumberKey);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBoxVernamKey);
             this.Controls.Add(this.buttonVernamKeyLoadFromFile);
@@ -151,7 +142,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.RichTextBox richTextBoxVernamKey;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxNumberKey;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }

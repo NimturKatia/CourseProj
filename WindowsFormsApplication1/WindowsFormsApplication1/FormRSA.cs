@@ -50,6 +50,7 @@ namespace WindowsFormsApplication1
             }
             int p1 = Convert.ToInt32(textBox1.Text);
             int p2 = Convert.ToInt32(textBox2.Text);
+
             string[] _keys = new string[3];
             keys = rsa.generatePairs(p1, p2);
             _keys[0] = keys[1].ToString();
@@ -78,6 +79,16 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            bool flag = false;
+            foreach (char c in richTextBox2.Text)
+            {
+                if ((c<48)||(c>57))
+                {
+                    flag = true;
+                    MessageBox.Show("Один із символів не є числом! Перевірте введені дані!");
+                    return;
+                }
+            }
             richTextBox2.Text = "";
             string[] bytes = richTextBox1.Text.Split(' ');
             int[] byteArr = new int[(bytes.Length-1)*2];
@@ -113,6 +124,7 @@ namespace WindowsFormsApplication1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            richTextBox2.Text = "";
             keys = new List<int>();
             string[] keysArr = File.ReadAllLines(@"RSAkeys.txt");
             if (keysArr.Length >= 3)
