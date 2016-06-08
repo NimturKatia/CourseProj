@@ -45,7 +45,20 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new FormRSA().Show();
+        }
 
+        private void buttonCeasar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new CaesarForm().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Vigenere().Show();
         }
     }
 }

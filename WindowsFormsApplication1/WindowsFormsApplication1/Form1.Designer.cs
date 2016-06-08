@@ -32,20 +32,22 @@
             this.buttonVernam = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCeasar
             // 
-            this.buttonCeasar.Location = new System.Drawing.Point(75, 34);
+            this.buttonCeasar.Location = new System.Drawing.Point(75, 37);
             this.buttonCeasar.Name = "buttonCeasar";
             this.buttonCeasar.Size = new System.Drawing.Size(128, 23);
             this.buttonCeasar.TabIndex = 0;
             this.buttonCeasar.Text = "Алгоритм Цезаря";
             this.buttonCeasar.UseVisualStyleBackColor = true;
+            this.buttonCeasar.Click += new System.EventHandler(this.buttonCeasar_Click);
             // 
             // buttonVernam
             // 
-            this.buttonVernam.Location = new System.Drawing.Point(75, 63);
+            this.buttonVernam.Location = new System.Drawing.Point(75, 66);
             this.buttonVernam.Name = "buttonVernam";
             this.buttonVernam.Size = new System.Drawing.Size(128, 23);
             this.buttonVernam.TabIndex = 1;
@@ -55,7 +57,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(75, 92);
+            this.button3.Location = new System.Drawing.Point(75, 95);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 23);
             this.button3.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(75, 121);
+            this.button4.Location = new System.Drawing.Point(75, 226);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 23);
             this.button4.TabIndex = 3;
@@ -73,9 +75,20 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(75, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Шифр Віженера";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(273, 261);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonVernam);
@@ -95,6 +108,7 @@
         private System.Windows.Forms.Button buttonVernam;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }
 
