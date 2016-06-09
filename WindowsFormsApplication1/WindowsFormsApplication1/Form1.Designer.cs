@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -56,9 +56,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(75, 226);
+            this.button4.Location = new System.Drawing.Point(58, 226);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 23);
+            this.button4.Size = new System.Drawing.Size(145, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Вихід";
             this.button4.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // FormMenu
             // 
             this.ClientSize = new System.Drawing.Size(273, 261);
             this.Controls.Add(this.button1);
@@ -82,7 +82,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonVernam);
             this.Font = new System.Drawing.Font("Calibri", 10F);
-            this.Name = "Form1";
+            this.Name = "FormMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);

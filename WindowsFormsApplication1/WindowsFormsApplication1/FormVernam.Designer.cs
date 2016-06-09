@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.InputDataTextBox = new System.Windows.Forms.TextBox();
-            this.OutputDataTextBox = new System.Windows.Forms.TextBox();
             this.buttonEncrypt = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDecrypt = new System.Windows.Forms.Button();
@@ -39,29 +37,15 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonVernamOpen = new System.Windows.Forms.Button();
+            this.richTextBoxVernamInput = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // InputDataTextBox
-            // 
-            this.InputDataTextBox.Location = new System.Drawing.Point(14, 50);
-            this.InputDataTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.InputDataTextBox.Multiline = true;
-            this.InputDataTextBox.Name = "InputDataTextBox";
-            this.InputDataTextBox.Size = new System.Drawing.Size(247, 388);
-            this.InputDataTextBox.TabIndex = 0;
-            // 
-            // OutputDataTextBox
-            // 
-            this.OutputDataTextBox.Location = new System.Drawing.Point(449, 50);
-            this.OutputDataTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.OutputDataTextBox.Multiline = true;
-            this.OutputDataTextBox.Name = "OutputDataTextBox";
-            this.OutputDataTextBox.Size = new System.Drawing.Size(247, 388);
-            this.OutputDataTextBox.TabIndex = 1;
             // 
             // buttonEncrypt
             // 
-            this.buttonEncrypt.Location = new System.Drawing.Point(278, 166);
+            this.buttonEncrypt.Location = new System.Drawing.Point(677, 97);
             this.buttonEncrypt.Name = "buttonEncrypt";
             this.buttonEncrypt.Size = new System.Drawing.Size(155, 23);
             this.buttonEncrypt.TabIndex = 2;
@@ -71,7 +55,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(278, 253);
+            this.buttonSave.Location = new System.Drawing.Point(677, 289);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(155, 23);
             this.buttonSave.TabIndex = 3;
@@ -81,7 +65,7 @@
             // 
             // buttonDecrypt
             // 
-            this.buttonDecrypt.Location = new System.Drawing.Point(278, 195);
+            this.buttonDecrypt.Location = new System.Drawing.Point(677, 231);
             this.buttonDecrypt.Name = "buttonDecrypt";
             this.buttonDecrypt.Size = new System.Drawing.Size(155, 23);
             this.buttonDecrypt.TabIndex = 4;
@@ -91,7 +75,7 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(621, 460);
+            this.buttonBack.Location = new System.Drawing.Point(757, 379);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 5;
@@ -101,7 +85,7 @@
             // 
             // buttonKey
             // 
-            this.buttonKey.Location = new System.Drawing.Point(278, 137);
+            this.buttonKey.Location = new System.Drawing.Point(677, 39);
             this.buttonKey.Name = "buttonKey";
             this.buttonKey.Size = new System.Drawing.Size(155, 23);
             this.buttonKey.TabIndex = 6;
@@ -111,7 +95,7 @@
             // 
             // buttonVernamSaveKey
             // 
-            this.buttonVernamSaveKey.Location = new System.Drawing.Point(278, 224);
+            this.buttonVernamSaveKey.Location = new System.Drawing.Point(677, 260);
             this.buttonVernamSaveKey.Name = "buttonVernamSaveKey";
             this.buttonVernamSaveKey.Size = new System.Drawing.Size(155, 23);
             this.buttonVernamSaveKey.TabIndex = 7;
@@ -131,17 +115,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 19);
+            this.label2.Location = new System.Drawing.Point(12, 212);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Результат:";
+            this.label2.Text = "Вихідні дані:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // buttonVernamOpen
+            // 
+            this.buttonVernamOpen.Location = new System.Drawing.Point(677, 68);
+            this.buttonVernamOpen.Name = "buttonVernamOpen";
+            this.buttonVernamOpen.Size = new System.Drawing.Size(155, 23);
+            this.buttonVernamOpen.TabIndex = 10;
+            this.buttonVernamOpen.Text = "Відкрити файл";
+            this.buttonVernamOpen.UseVisualStyleBackColor = true;
+            this.buttonVernamOpen.Click += new System.EventHandler(this.buttonVernamOpen_Click);
+            // 
+            // richTextBoxVernamInput
+            // 
+            this.richTextBoxVernamInput.Location = new System.Drawing.Point(12, 39);
+            this.richTextBoxVernamInput.Name = "richTextBoxVernamInput";
+            this.richTextBoxVernamInput.Size = new System.Drawing.Size(647, 170);
+            this.richTextBoxVernamInput.TabIndex = 11;
+            this.richTextBoxVernamInput.Text = "";
+            // 
+            // richTextBoxOutput
+            // 
+            this.richTextBoxOutput.Location = new System.Drawing.Point(12, 232);
+            this.richTextBoxOutput.Name = "richTextBoxOutput";
+            this.richTextBoxOutput.Size = new System.Drawing.Size(647, 170);
+            this.richTextBoxOutput.TabIndex = 12;
+            this.richTextBoxOutput.Text = "";
             // 
             // FormVernam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 495);
+            this.ClientSize = new System.Drawing.Size(844, 414);
+            this.Controls.Add(this.richTextBoxOutput);
+            this.Controls.Add(this.richTextBoxVernamInput);
+            this.Controls.Add(this.buttonVernamOpen);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonVernamSaveKey);
@@ -150,8 +167,6 @@
             this.Controls.Add(this.buttonDecrypt);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonEncrypt);
-            this.Controls.Add(this.OutputDataTextBox);
-            this.Controls.Add(this.InputDataTextBox);
             this.Font = new System.Drawing.Font("Calibri", 10F);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormVernam";
@@ -164,9 +179,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox InputDataTextBox;
-        private System.Windows.Forms.TextBox OutputDataTextBox;
         private System.Windows.Forms.Button buttonEncrypt;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonDecrypt;
@@ -176,5 +188,9 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonVernamOpen;
+        private System.Windows.Forms.RichTextBox richTextBoxVernamInput;
+        private System.Windows.Forms.RichTextBox richTextBoxOutput;
     }
 }

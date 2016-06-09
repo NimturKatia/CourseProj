@@ -20,9 +20,9 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, EventArgs e)
         {
             string abc = "abcdefghijklmnopqrstuvwxyz";
-            string key = textBox1.Text.ToLower();
-            string input = richTextBox1.Text.ToLower();
-            richTextBox2.Text = Encrypt(abc, input, key);
+            string key = textBoxVigenereKey.Text.ToLower();
+            string input = richTextBoxVigenereInput.Text.ToLower();
+            richTextBoxVigenereOutput.Text = Encrypt(abc, input, key);
         }
 
         private string Encrypt(string abc, string input, string key)
@@ -84,20 +84,26 @@ namespace WindowsFormsApplication1
 
         private void Vigenere_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new Form1().Show();
+            new FormMenu().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             string abc = "abcdefghijklmnopqrstuvwxyz";
-            string key = textBox1.Text.ToLower();
-            string input = richTextBox1.Text.ToLower();
-            richTextBox2.Text = Decrypt(abc, input, key);
+            string key = textBoxVigenereKey.Text.ToLower();
+            string input = richTextBoxVigenereInput.Text.ToLower();
+            richTextBoxVigenereOutput.Text = Decrypt(abc, input, key);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt files|*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                richTextBoxVigenereInput.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.PlainText);
 
+            }
         }
     }
 }

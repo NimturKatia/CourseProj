@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
 
         private void FormRSA_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new Form1().Show();
+            new FormMenu().Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -42,25 +42,30 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox2.Text = "";
-            if (textBox1.Text == "" && textBox2.Text == "")
+            richTextBoxRsaOutput.Text = "";
+            if (textBoxP.Text == "" && textBoxQ.Text == "")
             {
-                MessageBox.Show("EMPTY FIELDS");
+                MessageBox.Show("Введіть дані!");
                 return;
             }
-            int p1 = Convert.ToInt32(textBox1.Text);
-            int p2 = Convert.ToInt32(textBox2.Text);
+            int p1 = Convert.ToInt32(textBoxP.Text);
+            int p2 = Convert.ToInt32(textBoxQ.Text);
 
+            if (!rsa.isPrime(p1) || !rsa.isPrime(p2))
+            {
+                MessageBox.Show("Введіть прості числа!");
+                return;
+            }
             string[] _keys = new string[3];
             keys = rsa.generatePairs(p1, p2);
             _keys[0] = keys[1].ToString();
             _keys[1] = keys[2].ToString();
             _keys[2] = keys[0].ToString();
             File.WriteAllLines(@"RSAkeys.txt", _keys);
-            string input = richTextBox1.Text;
+            string input = richTextBoxRsaInput.Text;
             crp = rsa.Encrypt(keys, input);
             for (int i = 0; i < crp.Length; i += 2)
-                richTextBox2.Text += crp[i] + " ";
+                richTextBoxRsaOutput.Text += crp[i] + " ";
 
         }
 
@@ -72,7 +77,7 @@ namespace WindowsFormsApplication1
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
-                streamWriter.WriteLine(richTextBox2.Text);
+                streamWriter.WriteLine(richTextBoxRsaOutput.Text);
                 streamWriter.Close();
             }
         }
@@ -80,17 +85,17 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, EventArgs e)
         {
             bool flag = false;
-            foreach (char c in richTextBox2.Text)
+            foreach (char c in richTextBoxRsaOutput.Text)
             {
                 if ((c<48)||(c>57))
                 {
                     flag = true;
-                    MessageBox.Show("Один із символів не є числом! Перевірте введені дані!");
+                    MessageBox.Show("Перевірте введені дані!");
                     return;
                 }
             }
-            richTextBox2.Text = "";
-            string[] bytes = richTextBox1.Text.Split(' ');
+            richTextBoxRsaOutput.Text = "";
+            string[] bytes = richTextBoxRsaInput.Text.Split(' ');
             int[] byteArr = new int[(bytes.Length-1)*2];
             int it = 0;
             for (int i = 0; i < byteArr.Length; i++) {
@@ -106,7 +111,7 @@ namespace WindowsFormsApplication1
             keys[0] = Convert.ToInt32(_keys[2]);
             keys[1] = Convert.ToInt32(_keys[0]);
             keys[2] = Convert.ToInt32(_keys[1]);
-            richTextBox2.Text = rsa.Decrypt(keys, byteArr);
+            richTextBoxRsaOutput.Text = rsa.Decrypt(keys, byteArr);
             
 
         }
@@ -117,14 +122,14 @@ namespace WindowsFormsApplication1
             openFileDialog.Filter = "txt files|*.txt";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                richTextBox1.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.PlainText);
+                richTextBoxRsaInput.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.PlainText);
 
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            richTextBox2.Text = "";
+            richTextBoxRsaOutput.Text = "";
             keys = new List<int>();
             string[] keysArr = File.ReadAllLines(@"RSAkeys.txt");
             if (keysArr.Length >= 3)
@@ -132,10 +137,10 @@ namespace WindowsFormsApplication1
                 keys.Add(Convert.ToInt32(keysArr[2]));
                 keys.Add(Convert.ToInt32(keysArr[0]));
                 keys.Add(Convert.ToInt32(keysArr[1]));
-                string input = richTextBox1.Text;
+                string input = richTextBoxRsaInput.Text;
                 crp = rsa.Encrypt(keys, input);
                 for (int i = 0; i < crp.Length; i += 2)
-                    richTextBox2.Text += crp[i] + " ";
+                    richTextBoxRsaOutput.Text += crp[i] + " ";
             }
         }
     }

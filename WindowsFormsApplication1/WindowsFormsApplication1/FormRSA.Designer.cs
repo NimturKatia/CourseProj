@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.backBtnRsa = new System.Windows.Forms.Button();
+            this.textBoxP = new System.Windows.Forms.TextBox();
+            this.richTextBoxRsaInput = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxRsaOutput = new System.Windows.Forms.RichTextBox();
+            this.textBoxQ = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonRsaEncryptByNum = new System.Windows.Forms.Button();
+            this.buttonRsaDecrypt = new System.Windows.Forms.Button();
+            this.buttonRsaKeys = new System.Windows.Forms.Button();
+            this.buttonRsaSave = new System.Windows.Forms.Button();
+            this.buttonRsaEncriptByKeys = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonRsaOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // backBtn
+            // backBtnRsa
             // 
-            this.backBtn.Location = new System.Drawing.Point(735, 383);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(108, 23);
-            this.backBtn.TabIndex = 0;
-            this.backBtn.Text = "Назад";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.backBtnRsa.Location = new System.Drawing.Point(735, 383);
+            this.backBtnRsa.Name = "backBtnRsa";
+            this.backBtnRsa.Size = new System.Drawing.Size(108, 23);
+            this.backBtnRsa.TabIndex = 0;
+            this.backBtnRsa.Text = "Назад";
+            this.backBtnRsa.UseVisualStyleBackColor = true;
+            this.backBtnRsa.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // textBox1
+            // textBoxP
             // 
-            this.textBox1.Location = new System.Drawing.Point(342, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 24);
-            this.textBox1.TabIndex = 1;
+            this.textBoxP.Location = new System.Drawing.Point(342, 22);
+            this.textBoxP.Name = "textBoxP";
+            this.textBoxP.Size = new System.Drawing.Size(140, 24);
+            this.textBoxP.TabIndex = 1;
             // 
-            // richTextBox1
+            // richTextBoxRsaInput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 66);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(717, 142);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.richTextBoxRsaInput.Location = new System.Drawing.Point(12, 66);
+            this.richTextBoxRsaInput.Name = "richTextBoxRsaInput";
+            this.richTextBoxRsaInput.Size = new System.Drawing.Size(717, 142);
+            this.richTextBoxRsaInput.TabIndex = 2;
+            this.richTextBoxRsaInput.Text = "";
             // 
-            // richTextBox2
+            // richTextBoxRsaOutput
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(12, 243);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(717, 163);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.richTextBoxRsaOutput.Location = new System.Drawing.Point(12, 243);
+            this.richTextBoxRsaOutput.Name = "richTextBoxRsaOutput";
+            this.richTextBoxRsaOutput.Size = new System.Drawing.Size(717, 163);
+            this.richTextBoxRsaOutput.TabIndex = 3;
+            this.richTextBoxRsaOutput.Text = "";
             // 
-            // textBox2
+            // textBoxQ
             // 
-            this.textBox2.Location = new System.Drawing.Point(589, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 24);
-            this.textBox2.TabIndex = 4;
+            this.textBoxQ.Location = new System.Drawing.Point(589, 22);
+            this.textBoxQ.Name = "textBoxQ";
+            this.textBoxQ.Size = new System.Drawing.Size(140, 24);
+            this.textBoxQ.TabIndex = 4;
             // 
             // label1
             // 
@@ -123,94 +123,94 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Вихідні дані";
             // 
-            // button1
+            // buttonRsaEncryptByNum
             // 
-            this.button1.Location = new System.Drawing.Point(735, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Заш. по числах";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRsaEncryptByNum.Location = new System.Drawing.Point(735, 66);
+            this.buttonRsaEncryptByNum.Name = "buttonRsaEncryptByNum";
+            this.buttonRsaEncryptByNum.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaEncryptByNum.TabIndex = 9;
+            this.buttonRsaEncryptByNum.Text = "Заш. по числах";
+            this.buttonRsaEncryptByNum.UseVisualStyleBackColor = true;
+            this.buttonRsaEncryptByNum.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonRsaDecrypt
             // 
-            this.button2.Location = new System.Drawing.Point(735, 95);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Розшифрувати";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonRsaDecrypt.Location = new System.Drawing.Point(735, 242);
+            this.buttonRsaDecrypt.Name = "buttonRsaDecrypt";
+            this.buttonRsaDecrypt.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaDecrypt.TabIndex = 10;
+            this.buttonRsaDecrypt.Text = "Розшифрувати";
+            this.buttonRsaDecrypt.UseVisualStyleBackColor = true;
+            this.buttonRsaDecrypt.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonRsaKeys
             // 
-            this.button3.Location = new System.Drawing.Point(735, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Ключі";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonRsaKeys.Location = new System.Drawing.Point(735, 124);
+            this.buttonRsaKeys.Name = "buttonRsaKeys";
+            this.buttonRsaKeys.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaKeys.TabIndex = 11;
+            this.buttonRsaKeys.Text = "Ключі";
+            this.buttonRsaKeys.UseVisualStyleBackColor = true;
+            this.buttonRsaKeys.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // buttonRsaSave
             // 
-            this.button4.Location = new System.Drawing.Point(735, 154);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Зберегт. файл";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonRsaSave.Location = new System.Drawing.Point(735, 271);
+            this.buttonRsaSave.Name = "buttonRsaSave";
+            this.buttonRsaSave.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaSave.TabIndex = 12;
+            this.buttonRsaSave.Text = "Зберегт. файл";
+            this.buttonRsaSave.UseVisualStyleBackColor = true;
+            this.buttonRsaSave.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // buttonRsaEncriptByKeys
             // 
-            this.button5.Location = new System.Drawing.Point(735, 52);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Заш. по ключах";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonRsaEncriptByKeys.Location = new System.Drawing.Point(735, 95);
+            this.buttonRsaEncriptByKeys.Name = "buttonRsaEncriptByKeys";
+            this.buttonRsaEncriptByKeys.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaEncriptByKeys.TabIndex = 13;
+            this.buttonRsaEncriptByKeys.Text = "Заш. по ключах";
+            this.buttonRsaEncriptByKeys.UseVisualStyleBackColor = true;
+            this.buttonRsaEncriptByKeys.Click += new System.EventHandler(this.button5_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button6
+            // buttonRsaOpen
             // 
-            this.button6.Location = new System.Drawing.Point(735, 183);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(108, 23);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Відкр. файл";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonRsaOpen.Location = new System.Drawing.Point(735, 300);
+            this.buttonRsaOpen.Name = "buttonRsaOpen";
+            this.buttonRsaOpen.Size = new System.Drawing.Size(108, 23);
+            this.buttonRsaOpen.TabIndex = 14;
+            this.buttonRsaOpen.Text = "Відкр. файл";
+            this.buttonRsaOpen.UseVisualStyleBackColor = true;
+            this.buttonRsaOpen.Click += new System.EventHandler(this.button6_Click);
             // 
             // FormRSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 417);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRsaOpen);
+            this.Controls.Add(this.buttonRsaEncriptByKeys);
+            this.Controls.Add(this.buttonRsaSave);
+            this.Controls.Add(this.buttonRsaKeys);
+            this.Controls.Add(this.buttonRsaDecrypt);
+            this.Controls.Add(this.buttonRsaEncryptByNum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.textBoxQ);
+            this.Controls.Add(this.richTextBoxRsaOutput);
+            this.Controls.Add(this.richTextBoxRsaInput);
+            this.Controls.Add(this.textBoxP);
+            this.Controls.Add(this.backBtnRsa);
             this.Font = new System.Drawing.Font("Calibri", 10F);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormRSA";
-            this.Text = "FormRSA";
+            this.Text = "RSA";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRSA_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,22 +219,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button backBtnRsa;
+        private System.Windows.Forms.TextBox textBoxP;
+        private System.Windows.Forms.RichTextBox richTextBoxRsaInput;
+        private System.Windows.Forms.RichTextBox richTextBoxRsaOutput;
+        private System.Windows.Forms.TextBox textBoxQ;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonRsaEncryptByNum;
+        private System.Windows.Forms.Button buttonRsaDecrypt;
+        private System.Windows.Forms.Button buttonRsaKeys;
+        private System.Windows.Forms.Button buttonRsaSave;
+        private System.Windows.Forms.Button buttonRsaEncriptByKeys;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonRsaOpen;
     }
 }

@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         private void FormVernam_FormClosed(object sender, FormClosedEventArgs e)
         {
             File.Delete(@"vernamKey.txt");
-            new Form1().Show();
+            new FormMenu().Show();
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {
@@ -39,23 +39,23 @@ namespace WindowsFormsApplication1
             try
             {
                 string key = File.ReadAllText(@"vernamKey.txt"); //Зчитування ключа
-                if (InputDataTextBox.Text == "")
+                if (richTextBoxVernamInput.Text == "")
                 {
                     MessageBox.Show("Введіть дані для дешифрування!");
                     return;
                 }
-                if (key.Length != InputDataTextBox.Text.Length)
+                if (key.Length != richTextBoxVernamInput.Text.Length)
                 {
                     MessageBox.Show("Розмір ключа не співпадає з розміром тексту!");
                     return;
                 }
-                OutputDataTextBox.Text = Vernam.Encrypt(InputDataTextBox.Text, key);
+                richTextBoxOutput.Text = Vernam.Encrypt(richTextBoxVernamInput.Text, key);
             }
             catch (Exception err) // Якщо файлу не існує
             {
                 MessageBox.Show("Введіть ключ!");
             }
-            if (InputDataTextBox.Text == "")
+            if (richTextBoxVernamInput.Text == "")
             {
                 MessageBox.Show("Введіть дані для шифрування!");
                 return;
@@ -73,16 +73,16 @@ namespace WindowsFormsApplication1
             try
             {
                 string key = File.ReadAllText(@"vernamKey.txt"); //Зчитування ключа
-                if (InputDataTextBox.Text == "")
+                if (richTextBoxVernamInput.Text == "")
                 {
                     MessageBox.Show("Введіть дані для дешифрування!");
                     return;
                 }
-                if (key.Length != InputDataTextBox.Text.Length)
+                if (key.Length != richTextBoxVernamInput.Text.Length)
                 {
                     MessageBox.Show("Розмір ключа не співпадає з розміром тексту!");
                 }
-                OutputDataTextBox.Text = Vernam.Encrypt(InputDataTextBox.Text, key);
+                richTextBoxOutput.Text = Vernam.Encrypt(richTextBoxVernamInput.Text, key);
             }
             catch (Exception err) // Якщо файлу не існує
             {
@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
 
         private void buttonKey_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(@"vernamnum", Convert.ToString(InputDataTextBox.Text.Length));
+            File.WriteAllText(@"vernamnum", Convert.ToString(richTextBoxVernamInput.Text.Length));
             new FormVernamKey().ShowDialog();   
         }
 
@@ -106,7 +106,7 @@ namespace WindowsFormsApplication1
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName);
-                streamWriter.WriteLine(OutputDataTextBox.Text);
+                streamWriter.WriteLine(richTextBoxOutput.Text);
                 streamWriter.Close();
             }
         }
@@ -122,6 +122,17 @@ namespace WindowsFormsApplication1
                 string key = File.ReadAllText(@"vernamKey.txt");
                 streamWriter.WriteLine(key);
                 streamWriter.Close();
+            }
+        }
+
+        private void buttonVernamOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt files|*.txt";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                richTextBoxVernamInput.LoadFile(openFileDialog.FileName, RichTextBoxStreamType.PlainText);
+
             }
         }
     }

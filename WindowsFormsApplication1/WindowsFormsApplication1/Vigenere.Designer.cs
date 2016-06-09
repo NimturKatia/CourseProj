@@ -28,90 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textBoxVigenereKey = new System.Windows.Forms.TextBox();
+            this.richTextBoxVigenereInput = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxVigenereOutput = new System.Windows.Forms.RichTextBox();
+            this.buttonVigenereBack = new System.Windows.Forms.Button();
+            this.buttonVigenereEncrypt = new System.Windows.Forms.Button();
+            this.buttonVigenereDecrypt = new System.Windows.Forms.Button();
+            this.buttonVigenereOpen = new System.Windows.Forms.Button();
+            this.buttonVigenereSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxVigenereKey
             // 
-            this.textBox1.Location = new System.Drawing.Point(379, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 24);
-            this.textBox1.TabIndex = 0;
+            this.textBoxVigenereKey.Location = new System.Drawing.Point(379, 12);
+            this.textBoxVigenereKey.Name = "textBoxVigenereKey";
+            this.textBoxVigenereKey.Size = new System.Drawing.Size(116, 24);
+            this.textBoxVigenereKey.TabIndex = 0;
             // 
-            // richTextBox1
+            // richTextBoxVigenereInput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(14, 50);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(481, 146);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.richTextBoxVigenereInput.Location = new System.Drawing.Point(14, 59);
+            this.richTextBoxVigenereInput.Name = "richTextBoxVigenereInput";
+            this.richTextBoxVigenereInput.Size = new System.Drawing.Size(481, 146);
+            this.richTextBoxVigenereInput.TabIndex = 1;
+            this.richTextBoxVigenereInput.Text = "";
             // 
-            // richTextBox2
+            // richTextBoxVigenereOutput
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(14, 238);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(481, 157);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.richTextBoxVigenereOutput.Location = new System.Drawing.Point(14, 238);
+            this.richTextBoxVigenereOutput.Name = "richTextBoxVigenereOutput";
+            this.richTextBoxVigenereOutput.Size = new System.Drawing.Size(481, 157);
+            this.richTextBoxVigenereOutput.TabIndex = 2;
+            this.richTextBoxVigenereOutput.Text = "";
             // 
-            // button1
+            // buttonVigenereBack
             // 
-            this.button1.Location = new System.Drawing.Point(501, 372);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonVigenereBack.Location = new System.Drawing.Point(501, 372);
+            this.buttonVigenereBack.Name = "buttonVigenereBack";
+            this.buttonVigenereBack.Size = new System.Drawing.Size(107, 23);
+            this.buttonVigenereBack.TabIndex = 3;
+            this.buttonVigenereBack.Text = "Назад";
+            this.buttonVigenereBack.UseVisualStyleBackColor = true;
+            this.buttonVigenereBack.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonVigenereEncrypt
             // 
-            this.button2.Location = new System.Drawing.Point(501, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Зашифрувати";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonVigenereEncrypt.Location = new System.Drawing.Point(501, 59);
+            this.buttonVigenereEncrypt.Name = "buttonVigenereEncrypt";
+            this.buttonVigenereEncrypt.Size = new System.Drawing.Size(107, 23);
+            this.buttonVigenereEncrypt.TabIndex = 4;
+            this.buttonVigenereEncrypt.Text = "Зашифрувати";
+            this.buttonVigenereEncrypt.UseVisualStyleBackColor = true;
+            this.buttonVigenereEncrypt.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonVigenereDecrypt
             // 
-            this.button3.Location = new System.Drawing.Point(501, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Розшифрувати";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonVigenereDecrypt.Location = new System.Drawing.Point(501, 88);
+            this.buttonVigenereDecrypt.Name = "buttonVigenereDecrypt";
+            this.buttonVigenereDecrypt.Size = new System.Drawing.Size(107, 23);
+            this.buttonVigenereDecrypt.TabIndex = 5;
+            this.buttonVigenereDecrypt.Text = "Розшифрувати";
+            this.buttonVigenereDecrypt.UseVisualStyleBackColor = true;
+            this.buttonVigenereDecrypt.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // buttonVigenereOpen
             // 
-            this.button4.Location = new System.Drawing.Point(501, 73);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Відкр. файл";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonVigenereOpen.Location = new System.Drawing.Point(501, 267);
+            this.buttonVigenereOpen.Name = "buttonVigenereOpen";
+            this.buttonVigenereOpen.Size = new System.Drawing.Size(107, 23);
+            this.buttonVigenereOpen.TabIndex = 6;
+            this.buttonVigenereOpen.Text = "Відкр. файл";
+            this.buttonVigenereOpen.UseVisualStyleBackColor = true;
+            this.buttonVigenereOpen.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // buttonVigenereSave
             // 
-            this.button5.Location = new System.Drawing.Point(501, 103);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(107, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Збер. файл";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonVigenereSave.Location = new System.Drawing.Point(501, 238);
+            this.buttonVigenereSave.Name = "buttonVigenereSave";
+            this.buttonVigenereSave.Size = new System.Drawing.Size(107, 23);
+            this.buttonVigenereSave.TabIndex = 7;
+            this.buttonVigenereSave.Text = "Збер. файл";
+            this.buttonVigenereSave.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -140,6 +141,10 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Вихідні дані";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Vigenere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -148,17 +153,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonVigenereSave);
+            this.Controls.Add(this.buttonVigenereOpen);
+            this.Controls.Add(this.buttonVigenereDecrypt);
+            this.Controls.Add(this.buttonVigenereEncrypt);
+            this.Controls.Add(this.buttonVigenereBack);
+            this.Controls.Add(this.richTextBoxVigenereOutput);
+            this.Controls.Add(this.richTextBoxVigenereInput);
+            this.Controls.Add(this.textBoxVigenereKey);
             this.Font = new System.Drawing.Font("Calibri", 10F);
             this.Name = "Vigenere";
-            this.Text = "Vigenere";
+            this.Text = "Алгоритм Віженера";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Vigenere_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,16 +172,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBoxVigenereKey;
+        private System.Windows.Forms.RichTextBox richTextBoxVigenereInput;
+        private System.Windows.Forms.RichTextBox richTextBoxVigenereOutput;
+        private System.Windows.Forms.Button buttonVigenereBack;
+        private System.Windows.Forms.Button buttonVigenereEncrypt;
+        private System.Windows.Forms.Button buttonVigenereDecrypt;
+        private System.Windows.Forms.Button buttonVigenereOpen;
+        private System.Windows.Forms.Button buttonVigenereSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

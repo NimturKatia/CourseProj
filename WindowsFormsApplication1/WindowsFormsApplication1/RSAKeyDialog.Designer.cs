@@ -33,9 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bckBtn = new System.Windows.Forms.Button();
             this.accBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxE = new System.Windows.Forms.TextBox();
+            this.textBoxD = new System.Windows.Forms.TextBox();
+            this.textBoxN = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -85,35 +85,35 @@
             this.accBtn.UseVisualStyleBackColor = true;
             this.accBtn.Click += new System.EventHandler(this.accBtn_Click);
             // 
-            // textBox1
+            // textBoxE
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 24);
-            this.textBox1.TabIndex = 5;
+            this.textBoxE.Location = new System.Drawing.Point(92, 21);
+            this.textBoxE.Name = "textBoxE";
+            this.textBoxE.Size = new System.Drawing.Size(310, 24);
+            this.textBoxE.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxD
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(310, 24);
-            this.textBox2.TabIndex = 6;
+            this.textBoxD.Location = new System.Drawing.Point(92, 54);
+            this.textBoxD.Name = "textBoxD";
+            this.textBoxD.Size = new System.Drawing.Size(310, 24);
+            this.textBoxD.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxN
             // 
-            this.textBox3.Location = new System.Drawing.Point(92, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(310, 24);
-            this.textBox3.TabIndex = 7;
+            this.textBoxN.Location = new System.Drawing.Point(92, 83);
+            this.textBoxN.Name = "textBoxN";
+            this.textBoxN.Size = new System.Drawing.Size(310, 24);
+            this.textBoxN.TabIndex = 7;
             // 
             // RSAKeyDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 166);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxN);
+            this.Controls.Add(this.textBoxD);
+            this.Controls.Add(this.textBoxE);
             this.Controls.Add(this.accBtn);
             this.Controls.Add(this.bckBtn);
             this.Controls.Add(this.label3);
@@ -136,8 +136,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bckBtn;
         private System.Windows.Forms.Button accBtn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxE;
+        private System.Windows.Forms.TextBox textBoxD;
+        private System.Windows.Forms.TextBox textBoxN;
     }
 }

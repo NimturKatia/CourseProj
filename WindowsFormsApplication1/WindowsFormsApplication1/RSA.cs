@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
         int phi, e, d, n;
         Random rand = new Random();
 
-        public static bool isPrime(int n)//check for prime num
+        public bool isPrime(int n)//check for prime num
         {
 
             if (n == 2)
