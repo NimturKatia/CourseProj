@@ -37,6 +37,7 @@ namespace WindowsFormsApplication1
                 textBoxD.Text = keys[1]; // d
                 textBoxN.Text = keys[2]; // n
             }
+
         }
 
         private void accBtn_Click(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace WindowsFormsApplication1
                 keys[1] = textBoxD.Text;
                 keys[2] = textBoxN.Text;
                 File.WriteAllLines(@"RSAkeys.txt", keys);
+                this.Close();
             }
             else
                 MessageBox.Show("Введіть дані!");
